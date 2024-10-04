@@ -1,0 +1,18 @@
+﻿<Window x:Name="MainWidow" x:Class="ProgramacaoAssincrona.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramacaoAssincrona"
+        mc:Ignorable="d"
+        Title="Cálculo de Pi" Height="473" Width="698" ResizeMode="NoResize">
+    <Grid x:Name="GridPrincipal">
+        <TextBox x:Name="OutBox" HorizontalAlignment="Left" Margin="28,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="371" FontSize="16" FontFamily="Bahnschrift Light"/>
+        <TextBox x:Name="NumeroDeTarefas" HorizontalAlignment="Left" Margin="586,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Height="30" FontSize="22" FontWeight="Bold" TextAlignment="Center" FontFamily="Bahnschrift Light"/>
+        <Label x:Name="TituloTarefas" Content="Número de Tarefas:" HorizontalAlignment="Left" Margin="405,69,0,0" VerticalAlignment="Top" Width="151" Height="30" FontSize="16" FontWeight="Bold" FontFamily="Bahnschrift Light"/>
+        <Label x:Name="TituloInteracoes" Content="Interacões. 10 elavao a:" HorizontalAlignment="Left" Margin="405,135,0,0" VerticalAlignment="Top" Width="176" Height="30" FontSize="16" FontWeight="Bold" FontFamily="Bahnschrift Light"/>
+        <TextBox x:Name="PotenciaInteracoes" HorizontalAlignment="Left" Margin="586,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Height="30" FontSize="22" FontWeight="Bold" RenderTransformOrigin="1.194,0.037" TextAlignment="Center" FontFamily="Bahnschrift Light"/>
+        <Button x:Name="BotaoExecutar" Content="Executar" HorizontalAlignment="Left" Margin="493,269,0,0" VerticalAlignment="Top" Height="42" Width="107" Click="BotaoExecutar_Click" FontSize="16" FontWeight="Bold" FontFamily="Bahnschrift Light"/>
+
+    </Grid>
+</Window>
