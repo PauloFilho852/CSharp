@@ -1,0 +1,21 @@
+Comandos comuns disponíveis através do PMC incluem:
+Add-Migration: Cria uma nova migração com base nas mudanças do modelo.
+Update-Database: Aplica as migrações ao banco de dados para atualizá-lo.
+Remove-Migration: Remove a última migração criada.
+
+No contexto do PMC, os comandos são específicos para o ambiente do Visual Studio e são geralmente
+mais amigáveis para quem prefere trabalhar diretamente na IDE.
+
+2. No Prompt de Comando (CLI)
+
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add <MigrationName>: Adiciona uma nova migração.
+dotnet ef database update: Atualiza o banco de dados aplicando as migrações pendentes.
+dotnet ef migrations remove: Remove a última migração criada.
+
+
+A primeira migration criada em um projeto Entity Framework Core tem a função de mapear as
+ entidades definidas na classe de contexto (DbContext) para as respectivas tabelas no 
+sistema de banco de dados. Ela cria as tabelas, colunas, relacionamentos e restrições que 
+correspondem às classes e propriedades do seu modelo de dados.
