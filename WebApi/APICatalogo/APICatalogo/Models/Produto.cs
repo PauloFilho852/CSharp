@@ -3,12 +3,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using APICatalogo.Validations;
+using Newtonsoft.Json.Linq;
 
 namespace APICatalogo.Models
 {
     //[Table("Produtos')]-->Opcional, pois:
     //na classe de contexto, as propriedades públicas já dão nome às tabelas
-    public class Produto
+    public class Produto : IValidatableObject
     {
         //[Key] -> Opcional, pois:
         //O Entity Framework Core reconhece 'Id' ou 'ClassNameId'.
@@ -16,7 +17,9 @@ namespace APICatalogo.Models
 
         [Required] //Data Annotations: permitem a validação de dados de entrada do modelo.
         [StringLength(300)] //Propriedade obrigatória, tamanho máximo de 300 caracteres
-        [PrimeiraMaiuscula] //Validação personalizada
+
+        //(comentado, pois há a mesma validação personalizada com implementação da interfaca IValidatableObject)
+        //[PrimeiraMaiuscula] //Validação personalizada
         public string? Nome { get; set; }
 
         [Required]
@@ -43,6 +46,22 @@ namespace APICatalogo.Models
         //Será ignorado a serialização quando for null
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Categoria? Categoria { get; set; }
+
+        //Validações Personlizadas com implementação da interfaca IValidatableObject
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (!string.IsNullOrEmpty(this.Nome))
+            {
+                string? primeiraLetra = this.Nome[0].ToString();
+
+                if (primeiraLetra != primeiraLetra?.ToUpper())
+                    yield return new ValidationResult("A primeia letra do nome deve ser maiúcula.", new[] { nameof(this.Nome)});      
+            }
+
+            if (this.Estoque <= 0)
+                yield return new ValidationResult("O estoque deve ser maior que 0.", new[] { nameof(this.Estoque)});
+            
+        }
     }
 }
 /*Data Annotations:
