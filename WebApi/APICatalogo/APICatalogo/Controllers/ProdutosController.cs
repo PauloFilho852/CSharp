@@ -23,7 +23,7 @@ namespace APICatalogo.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Produto>>> GetAsync()
         {
-            //AsNoTrackin(): entidades não são rastreadas, para posterior salvamento com SaveChanges();
+            //AsNoTrackin(): entidades não são rastreadas para posterior salvamento com SaveChanges();
             //Nunca retorne todos os registros
 
             List<Produto>? produtos = null;
