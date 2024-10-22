@@ -8,6 +8,7 @@ namespace Classes
         {
             Console.WriteLine("Palavra this:");
 
+            //Os objetos das classes são tipo referência (há  um ponteiro na Stack que aponta para os valores no heap)
             Aluno aluno = new("Paulo", 23);
 
             aluno.Print();

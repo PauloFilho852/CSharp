@@ -62,6 +62,14 @@ namespace CamposPropriedades
             //Propriedade automática. Criação automática de campo e metódos acessadores
             //(para casos em que não existe a necessidade implementação de código de acesso)
             public int MinhaPropriedadeAutomatica {get; set;}
+
+            //Propriedade somente leitura
+            public string? Nome { get; }
+
+            //Propriedade somente escrita
+            private int somenteEscrita;
+            public int SomenteEscrita { set { somenteEscrita = value; } }
+            
         }        
     }
 }
