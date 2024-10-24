@@ -20,17 +20,21 @@ namespace APICatalogo
             //tornando-os disponíveis para a aplicação.
             builder.Services.AddControllers().AddJsonOptions(options=> options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-            //Connection String
+            //Configuration é uma instância de IConfigurantion.
+            //Pegando a connection string do arquivo appsettings.json
             string? sqlServerConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            //Pegando um valor qualquer do aquivo appsettings.json
+            //var valor1 = builder.Configuration["chave1"];
             
             //Injeção do dependência do DbContext
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(sqlServerConnection));
 
-            //Adiconando um serviço ao para injeção de dependência.
+            //Adiconando um serviço para injeção de dependência.
             builder.Services.AddTransient<IMeuServico, MeuServico>();
                         
             //Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            //Adiciona serviços para explorar endpoints da API e configura o Swagger
+            //Adiciona serviços para explorar endpoints da API e configurar o Swagger
             //para gerar a documentação da API.Define a versão e o título da documentação da API.
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
