@@ -25,5 +25,11 @@ namespace APICatalogo.Controllers
 
             return $"Valor1: {valor1}. Valor2: {valor2}";
         }
+
+        [HttpGet("Erro")]
+        public string GetError()
+        {
+            throw new Exception("Minha mensagem de erro personalizado");
+        }
     }
 }

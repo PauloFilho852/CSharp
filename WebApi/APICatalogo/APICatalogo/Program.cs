@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using System;
 using System.Text.Json.Serialization;
 using APICatalogo.Services;
+using APICatalogo.Extensions;
 
 namespace APICatalogo
 {
@@ -46,11 +47,16 @@ namespace APICatalogo
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Configure the HTTP request pipeline (Midlewares).
+            //Pipeline de procedimentos pelos quais passa a requisição antes de ser entregue à aplicação.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                
+                //Midleware personalizado para capturar execeções não tratadas (pasta Extensions).
+                app.UseCustumExceptionHandler();
             }
 
             app.UseHttpsRedirection();
