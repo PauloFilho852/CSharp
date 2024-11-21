@@ -12,7 +12,7 @@
         }
     }
 
-    //Enumerações podem ser definidas dentro de namespace, classe ou struct
+    //Enumerações podem ser definidas dentro de namespaces, classes ou structs
     //Podem ser atribuidos valores. Os valores seguintes serão incrementais.
     //Por padrão o tipo é int, mas pode ser atribuido qualquer tipo numérico
     enum DiasDaSemana : byte

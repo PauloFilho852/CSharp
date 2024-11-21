@@ -9,12 +9,10 @@ namespace TratamentoExcecoes
             TryCatchFinally();
 
             Console.ReadKey();
-
         }
 
         static void TryCatchFinally()
         {
-
             try
             {
                 //Existem as SystemException e as ApplicationException que herdam de Exception
