@@ -69,7 +69,7 @@ namespace APICatalogo.Controllers
         //adiciona parâmetros e restrições a serem observadas na rota.
         //[HttpGet("{id:int}/{param = Teste}", Name = "ObterProduto")] -> Parâmetro de rota com valor default.
         [HttpGet("{id:int:min(1)}", Name = "ObterProduto")]
-        public async Task<ActionResult<Produto>> Get(int id, [BindRequired]string nome) //BindRequered exige o parâmetro nome na Query String (enpointUrl?nome=Paulo)
+        public async Task<ActionResult<Produto>> Get(int id, [BindRequired]string nome) //BindRequered exige o parâmetro nome na Query String
         {
             Produto? produto = null;
 
