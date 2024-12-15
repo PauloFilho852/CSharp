@@ -61,7 +61,6 @@ namespace APICatalogo.Controllers
             if (produtos == null)
                 return NotFound("Produtos não encontrados.");
 
-
             return produtos;
         }
 
@@ -85,7 +84,6 @@ namespace APICatalogo.Controllers
             if (produto == null)
                 return NotFound("Produto não encontrado.");
 
-
             return produto;
         }
 
@@ -94,8 +92,7 @@ namespace APICatalogo.Controllers
         {
             if (produto == null)
                 return BadRequest();
-
-            
+                        
             //Caso a validação dos dos dados feita por atributos data annotations não esteja sendo feita automaticamente.
             /*
             if(!ModelState.IsValid)

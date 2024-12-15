@@ -6,6 +6,7 @@ using System;
 using System.Text.Json.Serialization;
 using APICatalogo.Services;
 using APICatalogo.Extensions;
+using APICatalogo.Filters;
 
 namespace APICatalogo
 {
@@ -33,13 +34,15 @@ namespace APICatalogo
 
             //Adiconando um serviço para injeção de dependência.
             builder.Services.AddTransient<IMeuServico, MeuServico>();
-                        
+
+            //Adiciona o serviço para o filtro Action personalizado. Os filtros fazem parte do pipeline das requisições.
+            builder.Services.AddScoped<LogActionFilter>();
+
             //Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             //Adiciona serviços para explorar endpoints da API e configurar o Swagger
             //para gerar a documentação da API.Define a versão e o título da documentação da API.
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
 
             //Para desabilitar os parâmetros FromServices implícitos.
             //builder.Services.Configure<ApiBehaviorOptions>((options) => { options.DisableImplicitFromServicesParameters = true; });

@@ -16,6 +16,6 @@ dotnet ef migrations remove: Remove a última migração criada.
 
 
 A primeira migration criada em um projeto Entity Framework Core tem a função de mapear as
- entidades definidas na classe de contexto (DbContext) para as respectivas tabelas no 
+entidades definidas na classe de contexto (DbContext) para as respectivas tabelas no 
 sistema de banco de dados. Ela cria as tabelas, colunas, relacionamentos e restrições que 
 correspondem às classes e propriedades do seu modelo de dados.

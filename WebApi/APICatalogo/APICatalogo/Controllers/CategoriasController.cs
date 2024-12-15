@@ -50,7 +50,7 @@ namespace APICatalogo.Controllers
         }
 
 
-        // GET: api/Categorias/5
+        // GET: Categorias/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
@@ -64,7 +64,7 @@ namespace APICatalogo.Controllers
             return categoria;
         }
 
-        // PUT: api/Categorias/5
+        // PUT: Categorias/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
@@ -95,7 +95,7 @@ namespace APICatalogo.Controllers
             return NoContent();
         }
 
-        // POST: api/Categorias
+        // POST: Categorias
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
@@ -106,7 +106,7 @@ namespace APICatalogo.Controllers
             return CreatedAtAction("GetCategoria", new { id = categoria.CategoriaId }, categoria);
         }
 
-        // DELETE: api/Categorias/5
+        // DELETE: Categorias/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategoria(int id)
         {
